@@ -1,0 +1,182 @@
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003 David J. Grant <dgrant@ieee.org> http://www.davidgrant.ca
+% (c) 2007 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+% (c) 2009-2012 Derek R. Hildreth <derek@derekhildreth.com> http://www.derekhildreth.com
+%This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+% GENERAL NOTE:  There may be some notes specific to myself.  If you're only interested in my LaTeX source or it doesn't make sense, please disregard it.
+
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage[pdftex]{hyperref}
+\usepackage{enumitem}
+\hypersetup{
+  colorlinks,%
+  citecolor=black,%
+  filecolor=black,%
+  linkcolor=black,%
+  urlcolor=black
+  %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+\urlstyle{same}
+\definecolor{mygrey}{gray}{.85}
+\definecolor{mygreylink}{gray}{.40}
+\textheight=9.0in
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{0.375in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.375in}
+\addtolength{\textheight}{0.75in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+  \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+	#1 & #2 \\
+    {#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-7pt}}
+
+\newcommand{\ressubsubheading}[2]{
+  \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+	\textit{#1} & \textit{#2} \\
+  \end{tabular*}\vspace{-7pt}}
+
+\newcommand{\ressubsubheadingni}[2]{
+  \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+	#1 & #2 \\
+  \end{tabular*}\vspace{-7pt}}
+%-----------------------------------------------------------
+
+%-----------------------------------------------------------
+%General Resume Tips
+%   No periods!  Technically, nothing in this document is a full sentence.
+%   Use parallelism by ending key words with the same thing,  i.e. "Coordinated; Designed; Communicated".
+%   More tips on bottom of this LaTeX document.
+%-----------------------------------------------------------
+
+\begin{document}
+
+\newcommand{\mywebheader}{
+  \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+	\textbf{{\LARGE Mingdong Wang}} &{(+86) 18056890252}\\
+	& \href{mailto:kevinwangthu@gmail.com}{kevinwangthu@gmail.com}\\
+    & Room 324, Building No.28, Tsinghua University, Beijing, China
+  \end{tabular*}
+  \\
+  \vspace{0.1in}}
+
+% CHANGE HEADER SOURCE HERE
+\mywebheader
+
+%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+\begin{itemize}
+\item
+  \ressubheading{\href{http://www.tsinghua.edu.cn}{\textbf{Tsinghua University}}}{Beijing, China}{\textit{B.S. in Math and Physics, Minor in Computer Technology}}{Aug. 2012 -- July 2016(expected)}
+	            {
+%                  \ressubsubheading{Minor in Computer Technology}{}
+                  \footnotesize
+				  \begin{itemize}
+                    \resitem{\textbf{GPA: Overall: 89.8/100\quad Major: 90.0/100}}
+                    \resitem{Related Courses: Advanced Calculus, Advanced Algebra, Stochastic Mathematical Methods, Experiments in Math, Discrete Math, Introduction to AI, Java and OOP, C++ Programming for Linux}
+				  \end{itemize}
+				}
+		      \item
+			    \ressubheading{\href{http://www.ust.hk}{\textbf{Hong Kong University of Science and Technology}}}{Clear Water Bay, Hong Kong}{\textit{Exchange Student, School of Science}}{Aug. 2014 - Dec. 2014}
+				              { \footnotesize
+				                \begin{itemize}
+				                  \resitem{\textbf{GPA: 4.071/4.3}, Dean's List}
+                                  \resitem{Related Courses: Honor OOP and Data Structure, Honor Design and Analysis of Algorithms}
+				                \end{itemize}
+				              }
+
+\end{itemize} % End Education list
+
+%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Research Experience}
+\begin{itemize}
+\item
+  \ressubsubheadingni{\textbf{Research Assistant}, \textit{Advised by Prof. Minlie Huang}}{CS Dept., THU}{\vspace{5pt}
+    \ressubsubheading{\textbf{Domain Adaptation for Sentiment Classification}}{Sept. 2015 - Present}{
+      \footnotesize
+      \begin{itemize}
+        \resitem{Designed a novel network structure for classifiers' adaptation of product reviews from different domains}
+        \resitem{Combined autoencoder and sparse linear regression to extract higher level features from raw text}
+        \resitem{Implemented a Co-Training algorithm to learn a bilingual sentiment classifier}
+        \resitem{Languages: Matlab, Python, Theano}
+      \end{itemize}
+    }
+    \ressubsubheading{\textbf{Knowledge Graph Embedding by Flexible Translation}}{\textit{Mar. 2015 - Sept. 2015}}{
+      \footnotesize
+      \begin{itemize}
+        \resitem{Proposed a flexible translation principle to better embed multi-relational knowledge graph into $\mathbb{R}^k$}
+        \resitem{Utilized SGD to minimize a margin-based loss function, conducted extensive experiments}
+        \resitem{Improved existing models with our principle and achieved state-of-art results, submitted to KR-16}
+        \resitem{Language: C++}
+      \end{itemize}
+    }
+    }
+  \item
+    \ressubsubheadingni{\textbf{Research Assistant}, \textit{Advised by Prof. Gary Chan}}{CS Dept., HKUST}{\vspace{5pt}
+    \ressubsubheading{\textbf{Wi-Fi Indoor Localization by Sectors Junction}}{Sept. 2014 - Dec. 2014}{
+        \footnotesize
+	    \begin{itemize}
+          \resitem{Implemented a novel localization algorithm by junction of Wi-Fi signal sectors}
+	      \resitem{Used convex optimization to find the position, and clustering to reduce search space}
+          \resitem{Gathered and cleaned the first-hand Wi-Fi data of HKUST}
+          \resitem{Language: Java}
+	    \end{itemize}
+    }
+    }
+
+\end{itemize}  % End Experience list
+
+\resheading{Publication}
+\begin{itemize}
+  \resitem{Jun Feng, Minlie Huang, \textbf{Mingdong Wang}, Mantong Zhou, Yu Hao, and Xiaoyan Zhu, Knowledge Graph Embedding by Flexible Translation. Submitted to KR-16.}
+\end{itemize}
+
+\resheading{Projects}
+\begin{description}
+\item[microScheme] {A simplified but Turing complete Scheme interpreter with many syntax sugars like \emph{let}. Implemented many library functions like \emph{for-each}, \emph{assoc} and \emph{quicksort}. Implemented in C++ and documented by Doxygen.}
+\item[PhyDesktop] {A GUI software that manages class activities. Functions include login, user calendar, creating and sending notifications, supported by a database on server. Implemented in Java.}
+\end{description}
+
+\resheading{Awards and Honors}
+\begin{itemize}
+\item\ressubsubheadingni{First Prize in 30-th College Physics Competition in Part of China}{2013}
+\item\ressubsubheadingni{Social Work and Practice Scholarship of Tsinghua University}{2013}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+\begin{description}
+\item[Languages \& Tools] {C/C++, Java, Python, Theano, Matlab, Haskell, SQL, Shell Script, \LaTeX, Emacs}
+%  \item[]
+\end{description} % End Skills list
+
+
+\begin{comment}
+  \resheading{Standardized Tests}
+  \begin{description}
+  \item[TOEFL] {R: 30, L: 29, S: 23, W: 25, Total:107}
+  \item[GRE] {V: 156, Q: 170, AW: 3.5}
+  \end{description}
+\end{comment}
+
+\end{document}
